@@ -10,14 +10,13 @@ bool is_an_abundant_number(long n)
   //Every found divisior is part of a pair expect a sqrt(n) that is a divisor.
   for (long i = 2; i <= n / i; ++i)
   {
-
-    if ((n / i) == i) {
-        sum += i;
-        break;
-    }
-
     if (n % i == 0) {
-      sum += 1;
+      if ((n / i) == i) {
+          sum += i;
+          break;
+      }
+
+      sum += i;
       sum += n/i;
     }
 
